@@ -10,7 +10,6 @@ module.exports = {
     app: './src/main.js'
   },
   output: {
-    path: resolve('dist'),
     filename: '[name].[hash].js'
   },
   mode: "development",

@@ -1,9 +1,9 @@
-
 import React from 'react';
 import {render} from 'react-dom';
-import Greeter from '@/sections/Greeter';
+import Index from '@/index';
 
 import '@/assets/common.css';
 import '@/assets/fonts.css'
 
-render(<Greeter />, document.getElementById('app'));
+render(
+    <Index/>, document.getElementById('app'));
