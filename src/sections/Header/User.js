@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Menu from '@/sections/Header/Menu'
+import Menu from './Menu'
 
 class Header extends Component {
   constructor(props) {

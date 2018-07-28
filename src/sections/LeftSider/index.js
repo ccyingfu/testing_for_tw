@@ -1,23 +1,25 @@
 import React, {Component} from 'react'
+import Menu from './Menu'
+import History from './History'
 
 class LeftSider extends Component {
   constructor(props) {
     super(props);
     this.state = {};
     this.store = this.props.store;
-    this.sendMsg = this
-      ._sendMsg
-      .bind(this);
   }
   render() {
     return (
-      <span className='icon-boat' onClick={this.sendMsg}></span>
+      <div className="left-sider">
+        <Menu />
+        <History store={this.store}/>
+      </div>
     );
   }
   _sendMsg() {
-    this
-      .store
-      .setData("test", "test" + Math.random());
+    // this
+    //   .store
+    //   .setData("test", "test" + Math.random());
   }
 }
 

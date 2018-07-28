@@ -13,7 +13,7 @@ class Menu extends Component {
         {menus.map((menu, idx) => <li key={menu.className}>
           <span className={menu.className}></span>{menu.label}
         </li>)
-}
+        }
       </ul>
     );
   }
