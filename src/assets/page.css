@@ -1,0 +1,131 @@
+.header {
+  text-align: center;
+  padding: 10px;
+  height: 50px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 1px 1px 0px #888;
+}
+
+.header .logo {
+  margin-top: -30px
+}
+
+.user {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  width: 70px;
+  display: block;
+}
+
+.user>span {
+  width: 20px;
+  height: 40px;
+  line-height: 40px;
+  float: right;
+}
+
+.user span.head {
+  float: left;
+  width: 40px;
+  border: 1px solid #888;
+  border-radius: 50%;
+}
+
+.menu {
+  font-size: 14px;
+  position: absolute;
+  width: 150px;
+  padding: 10px 0;
+  top: 50px;
+  right: 0;
+  box-shadow: 1px 1px 1px 1px #888888;
+  text-align: left;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.show-menu {
+  animation: show_menu 0.05s;
+}
+
+.hide-menu {
+  animation: hide_menu 0.05s;
+}
+
+@keyframes show_menu {
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 25%;
+  }
+  50% {
+    height: 50%;
+  }
+  75% {
+    height: 75%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes hide_menu {
+  0% {
+    height: 100%;
+  }
+  25% {
+    height: 75%;
+  }
+  50% {
+    height: 50%;
+  }
+  75% {
+    height: 25%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+.menu>li {
+  padding: 10px 0 10px 20px;
+  cursor: pointer;
+  height: 24px;
+  line-height: 24px;
+}
+
+.menu>li span {
+  margin-right: 10px;
+}
+
+.menu>li:hover {
+  background-color: #efefef;
+}
+
+.footer {
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  font-size: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 -1px 1px 0px #888888;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer .blod {
+  font-weight: bold;
+}
+
+.show {
+  display: block
+}
+
+.hide {
+  display: none;
+}

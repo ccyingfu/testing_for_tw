@@ -11,7 +11,6 @@ class Bar extends Component {
       .store
       .on("test", (val) => {
         this.setState({test: val});
-        window.ss = this.store;
       });
 
   }
