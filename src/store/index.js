@@ -19,7 +19,7 @@ class Store {
     this.state[name] = data;
   }
   on(name, fn) {
-    this.messageList.$on(name, fn);
+    return this.messageList.$on(name, fn);
   }
 }
 

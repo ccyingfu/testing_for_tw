@@ -198,3 +198,206 @@
 .history>ul>li:hover {
   color: #00b4cf;
 }
+
+.main-view {
+  width: 100%;
+  padding: 12px;
+  height: calc(100vh - 94px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.status {
+  display: flex;
+}
+
+.building {
+  background-color: #ff9a2a;
+}
+
+.idle {
+  background-color: #7fbc39;
+}
+
+.detail {
+  color: #000;
+}
+
+.status>div,
+.status>ul {
+  flex: 1;
+  height: 144px;
+  padding: 0 10px;
+}
+
+.status>div>div {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.status>div>div .title {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  font-size: 28px;
+  color: #fff;
+}
+
+.status>div>div .number {
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+  font-size: 48px;
+  color: #fff;
+}
+
+.status .detail {
+  background-color: #ffffff;
+}
+
+.status .detail>li {
+  display: flex;
+  height: 50px;
+  line-height: 50px;
+}
+
+.status .detail>li>span {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.status .detail li span+span {
+  font-weight: bold;
+  text-align: right;
+}
+
+.searchingContainer {
+  padding: 20px 0;
+}
+
+.searchingContainer .searching {
+  height: 50px;
+  line-height: 50px;
+  background-color: #ffffff;
+}
+
+.searchingContainer .searching>ul {
+  display: flex;
+  width: 240px;
+}
+
+.searchingContainer .searching>ul>li {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid #ccc;
+  position: relative;
+  cursor: pointer;
+}
+
+.item-select {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #00b4cf;
+  height: 3px;
+}
+
+.result-container {
+  margin-top: 15px;
+}
+
+.result-list {}
+
+.result-list>li {
+  padding: 12px;
+  margin: 10px 0;
+  background-color: #ffffff
+}
+
+.result-list>li>ul,
+.result-list>li>div {
+  padding: 10px 0;
+}
+
+.result-list>li>ul {
+  display: flex;
+}
+
+.result-list>li>ul li {
+  font-size: 14px;
+  flex: 1;
+  text-align: center;
+}
+
+.result-list>li>ul li .re-icon {
+  padding-right: 12px;
+}
+
+.result-list>li>ul li .re-name {
+  color: #00b4cf;
+}
+
+.re-status span {
+  background-color: #ff9a2a;
+  color: #fff;
+  padding: 3px 5px;
+}
+
+.re-status span.s-idle {
+  background-color: #4ec24a
+}
+
+.result-list>li>div {
+  display: flex;
+  position: relative;
+}
+
+.plus {
+  background-color: #00b4cf;
+  color: #ffffff;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.icon-plus {
+  font-size: 18px;
+}
+
+.result-list li>div>ul {
+  display: flex;
+  height: 28px;
+  line-height: 30px;
+}
+
+.result-list li>div>ul>li {
+  flex: 1;
+}
+
+.resources>li>span {
+  background-color: #efefef;
+  padding: 5px;
+  margin: 5px;
+}
+
+.resources>li>span i {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.deny-button {
+  background-color: #00b4cf;
+  padding: 0 5px;
+  color: #fff;
+  line-height: 29px;
+  position: absolute;
+  right: 0px;
+  top: 5px;
+
+}
+
+.deny-button i {
+  margin-right: 5px;
+}
