@@ -11,10 +11,17 @@ class MainView extends Component {
   render() {
     return (
       <div className="main-view">
-        <Status store={this.store} />
-        <Search store={this.store} />
+        <Status store={this.store}/>
+        <Search store={this.store}/>
       </div>
     );
+  }
+  componentDidMount() {
+    let mainView = document.querySelector(".main-view");
+    mainView.addEventListener("scroll", function () {
+      let dlg = document.querySelector("[name='popup_dialog']");
+      dlg && dlg.parentNode.removeChild(dlg);
+    }, false);
   }
 }
 

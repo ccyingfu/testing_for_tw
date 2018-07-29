@@ -44,6 +44,7 @@
   text-align: left;
   background-color: #ffffff;
   overflow: hidden;
+  z-index: 10;
 }
 
 .show-menu {
