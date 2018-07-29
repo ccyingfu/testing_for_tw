@@ -1,0 +1,33 @@
+.popup-dialog {
+  position: absolute;
+  width: 570px;
+  border: 1px solid #00b4cf;
+  top: 20px;
+  left: 0;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.popup-dialog>div {
+  padding-bottom: 10px;
+}
+
+.popup-dialog.down {
+  /* box-shadow: 0 0px 3px 1px #000; */
+}
+
+.popup-dialog.up {
+  box-shadow: 1px 0 3px 1px #000;
+}
+
+.popup-dialog .top {
+  font-weight: bold;
+  font-size: 20px;
+  color: #00b4cf;
+  text-align: right;
+  position: relative;
+}
+
+.popup-dialog .top i.close {
+  cursor: pointer;
+}

@@ -19,16 +19,16 @@ class MessageList {
 			this.events[name] = [fn];
 		}
 		return {
-			remove(){
+			remove() {
 				let index = null;
 				let evts = self.events[name];
-				for(let i = 0; i < evts.length; i++){
-					if(evts[i] == fn){
+				for (let i = 0; i < evts.length; i++) {
+					if (evts[i] == fn) {
 						index = i;
 						break;
 					}
 				}
-				if(index != null){
+				if (index != null) {
 					evts.splice(index, 1);
 				}
 			}
@@ -44,3 +44,20 @@ export const ajax = {
 		});
 	}
 };
+
+
+export function getPos(obj) {
+	let height = obj.offsetHeight;
+	var pos = {
+		left: 0,
+		top: 0
+	};
+	while (obj) {
+		pos.left += obj.offsetLeft;
+		pos.top += obj.offsetTop;
+		obj = obj.offsetParent;
+	}
+	pos.bottom = pos.top + height;
+	return pos;
+
+}

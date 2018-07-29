@@ -1,6 +1,26 @@
 import React, {Component} from 'react'
-import Status from './Status'
-import Search from './Search'
+import {render, unmountComponentAtNode} from 'react-dom'
+import Button from '@/components/Button'
+import PopupDialog from '@/components/PopupDialog'
+import {getPos} from '@/utils'
+
+function createNodeForDlg(vm) {
+  var p = document.createElement('div');
+  p.setAttribute("name", "popup_dialog")
+  document
+    .body
+    .appendChild(p);
+}
+
+function removeDlgNode(vm) {
+  let div = document.querySelector("[name='popup_dialog']");
+  if (div) {
+    // unmountComponentAtNode(vm, div)
+    div
+      .parentNode
+      .removeChild(div);
+  }
+}
 
 class MainView extends Component {
   constructor(props) {
@@ -32,8 +52,12 @@ class MainView extends Component {
                 </li>
                 <li>
                   {data.status == "building"
-                    ? <div className="re-status"><span className="s-building">building</span></div>
-                    : <div className="re-status"><span className="s-idle">idle</span></div>}
+                    ? <div className="re-status">
+                        <span className="s-building">building</span>
+                      </div>
+                    : <div className="re-status">
+                      <span className="s-idle">idle</span>
+                    </div>}
                 </li>
                 <li>
                   <span className="icon-info re-icon"></span>
@@ -45,21 +69,20 @@ class MainView extends Component {
                 </li>
               </ul>
               <div>
-                <div className="plus">
-                  <span className="icon-plus"></span>
-                </div>
+                <Button icon="icon-plus" onClick={this.addResources}/>
                 <ul className="resources">
                   {data
                     .resources
-                    .map(res => <li>
-                      <span>{res}<i className="icon-trash"></i></span>
+                    .map(res => <li key={`result_resources_li_${feed++}`}>
+                      <span>{res}
+                        <i className="icon-trash"></i>
+                      </span>
                     </li>)
-                  }
+}
                 </ul>
-                <div className="deny-button">
-                  <i className="icon-deny"></i>
+                <Button icon="icon-deny" className="deny-button">
                   Deny
-                </div>
+                </Button>
               </div>
             </li>)
 }
@@ -67,6 +90,24 @@ class MainView extends Component {
       </div>
     );
   }
+
+  addResources(e) {
+    removeDlgNode();
+    createNodeForDlg();
+    let {left, bottom} = getPos(e.target);
+    render(
+      <PopupDialog
+      onClose={removeDlgNode}
+      style={{
+      top: bottom + "px",
+      left: left + "px"
+    }}/>, document.querySelector("[name='popup_dialog']"));
+  }
+
+  componentDidMount() {
+    createNodeForDlg();
+  }
+
 }
 
 export default MainView

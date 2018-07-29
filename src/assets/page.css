@@ -355,17 +355,6 @@
   position: relative;
 }
 
-.plus {
-  background-color: #00b4cf;
-  color: #ffffff;
-  padding: 5px;
-  cursor: pointer;
-}
-
-.icon-plus {
-  font-size: 18px;
-}
-
 .result-list li>div>ul {
   display: flex;
   height: 28px;
@@ -388,16 +377,8 @@
 }
 
 .deny-button {
-  background-color: #00b4cf;
-  padding: 0 5px;
-  color: #fff;
-  line-height: 29px;
   position: absolute;
   right: 0px;
   top: 5px;
 
-}
-
-.deny-button i {
-  margin-right: 5px;
 }
