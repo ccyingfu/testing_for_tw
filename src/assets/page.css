@@ -278,14 +278,19 @@
 }
 
 .searchingContainer .searching {
-  height: 50px;
-  line-height: 50px;
   background-color: #ffffff;
+  display: flex;
+  align-items: center;
 }
 
 .searchingContainer .searching>ul {
   display: inline-block;
   width: 240px;
+  flex: 1;
+}
+
+.searchingContainer .searching>div {
+  flex: 1;
 }
 
 .searchingContainer .searching>ul>li {
@@ -295,6 +300,27 @@
   position: relative;
   cursor: pointer;
   float: left;
+  height: 50px;
+  line-height: 50px;
+}
+
+.searchingContainer .searching>ul>li span {
+  font-size: 0;
+  line-height: 0;
+}
+
+.searchingContainer .searching .arrangeStyle {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.searchingContainer .searching .arrangeStyle>i {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.searchingContainer .searching .arrangeStyle>i:hover {
+  color: #00b4cf;
 }
 
 .item-select {
@@ -315,29 +341,36 @@
 .result-list>li {
   padding: 12px;
   margin: 10px 0;
-  background-color: #ffffff
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
 }
 
-.result-list>li>ul,
-.result-list>li>div {
+.result-list>li .re-system {
+  flex: 1;
+}
+
+.result-list>li .re-info {
+  flex: 7;
+}
+
+.result-list>li .re-info>ul,
+.result-list>li .re-info>div {
   padding: 10px 0;
-}
-
-.result-list>li>ul {
   display: flex;
 }
 
-.result-list>li>ul li {
+.result-list .re-info>ul li {
   font-size: 14px;
   flex: 1;
   text-align: center;
 }
 
-.result-list>li>ul li .re-icon {
+.result-list .re-info>ul li .re-icon {
   padding-right: 12px;
 }
 
-.result-list>li>ul li .re-name {
+.result-list .re-info>ul li .re-name {
   color: #00b4cf;
 }
 
@@ -351,18 +384,27 @@
   background-color: #4ec24a
 }
 
-.result-list>li>div {
+.result-list>li .re-info>div {
   display: flex;
   position: relative;
 }
 
-.result-list li>div>ul {
+.result-list li .re-info>ul {
   display: flex;
   height: 28px;
   line-height: 30px;
 }
 
-.result-list li>div>ul>li {
+.result-list li .re-info>ul>li {
+  flex: 1;
+}
+
+.resources {
+  display: flex;
+  align-items: center
+}
+
+.resources li {
   flex: 1;
 }
 

@@ -1,13 +1,42 @@
 .hw-input {
-  border: 1px solid #ccc;
-  padding: 3px 10px;
+  position: relative;
+  font-size: 14px;
   display: inline-block;
 }
 
-.hw-input input {
-  border: 0;
-  font-size: 16px;
+.hw-input i {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  color: #c0c4cc;
+  text-align: center;
+  height: 100%;
+  width: 25px;
+  text-align: center;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  line-height: 40px;
+}
+
+.hw-input .input-inner {
+  -webkit-appearance: none;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #606266;
+  display: inline-block;
+  font-size: inherit;
+  height: 40px;
+  line-height: 1;
+  outline: 0;
+  padding: 0 15px;
+  -webkit-transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+  transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
   width: 100%;
-  outline: none;
-  height: 24px;
+}
+
+.input--prefix .input-inner {
+  padding-left: 30px;
 }

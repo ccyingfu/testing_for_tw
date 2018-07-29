@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Result from './Result'
 import Input from '@/components/Input'
+import {ajax, debounce} from '@/utils'
 
 class Search extends Component {
   constructor(props) {
@@ -10,27 +11,18 @@ class Search extends Component {
       datas: []
     };
     this.currType = "all";
-    this.getAll = this
-      ._switch
-      .bind(this, "all");
-    this.getPhysical = this
-      ._switch
-      .bind(this, "physical");
-    this.getVirual = this
-      ._switch
-      .bind(this, "virtual");
-    this.getData = this
-      ._getData
-      .bind(this);
-    let evt = this
-      .store
-      .on("datas", (datas) => {
-        this.setState({datas});
-        evt.remove();
-        this.getData("all");
-      });
-
+    this.getAll = this._switch.bind(this, "all");
+    this.getPhysical = this._switch.bind(this, "physical");
+    this.getVirual = this._switch.bind(this, "virtual");
+    this.getData = this._getData.bind(this);
+    this.searchByStauts = debounce(this._searchByStauts.bind(this), 300);
+    let evt = this.store.on("datas", (datas) => {
+      this.setState({datas});
+      evt.remove();
+      this.getData("all");
+    });
   }
+
   render() {
     return (
       <div className="searchingContainer">
@@ -43,7 +35,23 @@ class Search extends Component {
             <li name="virtual" onClick={this.getVirual}>Virtual<span></span>
             </li>
           </ul>
-          {/* <Input /> */}
+          <div>
+            <Input
+              icon="icon-search"
+              placeholder="input building or idle, if void, show all"
+              style={{
+              width: "300px"
+            }}
+            onChange={value => {this.searchByStauts(value)}}/>
+          </div>
+          <div className="arrangeStyle">
+            <i className="icon-th-card"></i>
+            <i
+              className="icon-th-list"
+              style={{
+              color: "#00b4cf"
+            }}></i>
+          </div>
         </div>
         <Result store={this.store}/>
       </div>
@@ -74,6 +82,11 @@ class Search extends Component {
     this
       .store
       .setData("datas", datas);
+  }
+
+  _searchByStauts(value){
+    let datas = this.state.datas.filter(data => data.status == value);
+    value ? this.store.setData("datas", datas) : this.store.setData("datas", this.state.datas);
   }
 }
 

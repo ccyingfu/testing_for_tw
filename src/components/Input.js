@@ -8,9 +8,21 @@ class Input extends Component {
   }
 
   render() {
+    let icon = this.props.icon || "";
+    let cn = `hw-input ${icon
+      ? "input--prefix"
+      : ""}`
     return (
-      <div className="hw-input" style={this.props.style}>
-        <input placeholder="input resource name, please." />
+      <div className={cn} style={this.props.style}>
+        {icon && <i className={icon}></i>
+        }
+        <input
+          className="input-inner"
+          placeholder={this.props.placeholder}
+          onChange={e => {
+          let evt = this.props.onChange;
+          evt && evt(e.target.value);
+        }}/>
       </div>
     );
   }

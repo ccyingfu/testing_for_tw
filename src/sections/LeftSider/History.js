@@ -4,7 +4,19 @@ class History extends Component {
   constructor(props) {
     super(props);
     this.store = this.props.store;
-    this.datas = this.props.datas || [];
+    this.datas = this.props.datas || [
+      "bjstdmngbdr10.thoughtworks.com", 
+      "bjstdmngbdr10.thoughtworks.com", 
+      "bjstdmngbdr10.thoughtworks.com", 
+      "bjstdmngbdr10.thoughtworks.com", 
+      "bjstdmngbdr10.thoughtworks.com", 
+      "bjstdmngbdr10.thoughtworks.com", 
+      "bjstdmngbdr10.thoughtworks.com", 
+      "bjstdmngbdr10.thoughtworks.com", 
+      "bjstdmngbdr10.thoughtworks.com", 
+      "bjstdmngbdr10.thoughtworks.com", 
+      "bjstdmngbdr10.thoughtworks.com"
+    ];
     this.state = {
       datas: this.datas
     };

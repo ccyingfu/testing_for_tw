@@ -36,25 +36,30 @@ class MessageList {
   }
 }
 
+function handleAjax(url, data, type) {
+  return fetch(url, {
+    method: type,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+}
+
 export default MessageList;
 export const ajax = {
   get(url) {
-    return fetch(url).then(function(response) {
+    return fetch(url).then(function (response) {
       return response.json();
     });
   },
   put(url, data) {
-    return fetch({
-      url: url,
-      "headers": {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    })
+    return handleAjax(url, data, 'PUT');
+  },
+  delete(url, data) {
+    return handleAjax(url, data, 'DELETE');
   }
 };
-
-
 
 export function getPos(obj) {
   let height = obj.offsetHeight;
@@ -69,5 +74,16 @@ export function getPos(obj) {
   }
   pos.bottom = pos.top + height;
   return pos;
+}
 
+export function debounce(fn, delay) {
+  let timer;
+  return function () {
+    let args = arguments; 
+    let self = this;
+    timer && clearTimeout(timer);
+    timer = setTimeout(function () {
+      fn.apply(self, args)
+    }, delay);
+  }
 }
