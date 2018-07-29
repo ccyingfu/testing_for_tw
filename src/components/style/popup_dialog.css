@@ -12,10 +12,6 @@
   padding-bottom: 10px;
 }
 
-.popup-dialog.down {
-  /* box-shadow: 0 0px 3px 1px #000; */
-}
-
 .popup-dialog.up {
   box-shadow: 1px 0 3px 1px #000;
 }
