@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Result from './Result'
+import Input from '@/components/Input'
 
 class Search extends Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class Search extends Component {
             <li name="virtual" onClick={this.getVirual}>Virtual<span></span>
             </li>
           </ul>
+          {/* <Input /> */}
         </div>
         <Result store={this.store}/>
       </div>

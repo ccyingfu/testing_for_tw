@@ -92,14 +92,16 @@ class MainView extends Component {
   }
 
   addResources(e) {
+    console.log(data)
     removeDlgNode();
     createNodeForDlg();
     let {left, bottom} = getPos(e.target);
+    let scrollTop = document.querySelector(".main-view").scrollTop;
     render(
       <PopupDialog
       onClose={removeDlgNode}
       style={{
-      top: bottom + "px",
+      top: bottom - scrollTop + "px",
       left: left + "px"
     }}/>, document.querySelector("[name='popup_dialog']"));
   }

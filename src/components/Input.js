@@ -9,7 +9,7 @@ class Input extends Component {
 
   render() {
     return (
-      <div className="hw-input">
+      <div className="hw-input" style={this.props.style}>
         <input placeholder="input resource name, please." />
       </div>
     );

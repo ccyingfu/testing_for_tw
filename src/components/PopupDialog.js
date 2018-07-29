@@ -17,7 +17,7 @@ class PopupDialog extends Component {
         </div>
         <div>Separate multiple resuorces with commas.</div>
         <div>
-          <Input />
+          <Input style={{width: "550px"}}/>
         </div>
         <div>
           <Button style={{marginRight: "10px"}}>Add Resources</Button>

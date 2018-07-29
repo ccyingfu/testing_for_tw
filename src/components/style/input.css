@@ -1,6 +1,7 @@
 .hw-input {
   border: 1px solid #ccc;
   padding: 3px 10px;
+  display: inline-block;
 }
 
 .hw-input input {

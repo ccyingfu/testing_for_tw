@@ -284,16 +284,17 @@
 }
 
 .searchingContainer .searching>ul {
-  display: flex;
+  display: inline-block;
   width: 240px;
 }
 
 .searchingContainer .searching>ul>li {
-  flex: 1;
+  width: 79px;
   text-align: center;
   border-right: 1px solid #ccc;
   position: relative;
   cursor: pointer;
+  float: left;
 }
 
 .item-select {
@@ -380,5 +381,4 @@
   position: absolute;
   right: 0px;
   top: 5px;
-
 }
